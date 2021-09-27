@@ -1,0 +1,62 @@
+:root {
+    --dark-blue: #002E77;
+    --light-blue-1: #0074B8;
+    --light-blue-2: #007585;
+    --light-blue-3: #00FFFF;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+a {
+    color: var(--light-blue-3);
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.menu ul {
+    margin: 2rem 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+table,
+td,
+th {
+    border: 2px solid var(--white);
+    border-spacing: 0;
+}
+
+table {
+    border-radius: 5px;
+}
+
+th,
+td {
+    padding: 1rem;
+}
+
+th {
+    background-color: var(--black);
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-blue-1);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--light-blue-2);
+}
+
+tr:hover {
+    filter: brightness(125%);
+}
