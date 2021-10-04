@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/project', function () {
-    return view('project', ['title' => 'My Project', 'projects' => Project::allData()]);
+    return view('project', ['title' => 'My Project', 'pagetitle' => 'My Project', 'projects' => Project::allData()]);
 });
 
 Route::get('/contact', function () {
