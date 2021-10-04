@@ -41,4 +41,4 @@
     </table>
     @endsection
 
-    @extends('layout.footer')
+    @section('footer')

@@ -11,4 +11,4 @@
         </p>
     @endsection
 
-    @extends('layout.footer')
+    @section('footer')

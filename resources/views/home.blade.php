@@ -8,7 +8,4 @@
     <p>Welcome to my pages.</p>
     @endsection
 
-    @extends('layout.footer')
-</body>
-
-</html>
+    @section('footer')
