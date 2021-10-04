@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home', 'pagetitle' => 'Welcome HOME']);
+    return view('home', ['title' => 'Home', 'pagetitle' => 'Welcome Home']);
 });
 
-Route::get('/projects', function () {
-    return view('projects', ['title' => 'Projects', 'pagetitle' => 'My Projects']);
+Route::get('/project', function () {
+    return view('project', ['title' => 'My Project', 'projects' => Project::allData()]);
 });
 
 Route::get('/contact', function () {

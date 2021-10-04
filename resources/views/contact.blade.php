@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+    @extends('layout.mainlayout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>{{ $title }}</title>
-</head>
+    @section('title', 'Contact')
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        @include('layout.navigation')
-    </nav>
+    @section('pagetitle', 'My Contact')
 
-    <div class="container mt-5">
-        <h1 class="fw-bold">{{ $pagetitle }}</h1>
+    @section('main_content')
         <br>
         <h3>Hello, my name is Probo Krishnacahya.</h3>
         <p>Contact me at <a href="mailto:pkrishnacahya@student.ciputra.ac.id">pkrishnacahya@student.ciputra.ac.id</a>
         </p>
-    </div>
+    @endsection
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+    @extends('layout.footer')
