@@ -44,19 +44,3 @@ th,
 td {
     padding: 1rem;
 }
-
-th {
-    background-color: var(--black);
-}
-
-tr:nth-child(even) {
-    background-color: var(--light-blue-1);
-}
-
-tr:nth-child(odd) {
-    background-color: var(--light-blue-2);
-}
-
-tr:hover {
-    filter: brightness(125%);
-}
