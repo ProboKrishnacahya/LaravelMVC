@@ -5,3 +5,7 @@
 body {
     font-family: var(--body) !important;
 }
+
+a {
+    text-decoration: none !important;
+}
