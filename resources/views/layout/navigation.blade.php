@@ -9,5 +9,8 @@
         <li class="nav-link">
             <a class="nav-link {{ $title == 'Contact' ? 'active' : '' }}" href="/contact">Contact</a>
         </li>
+        <li class="nav-link">
+            <a class="nav-link {{ $title == 'Course' ? 'active' : '' }}" href="/course">Course</a>
+        </li>
     </ul>
 </div>

@@ -14,7 +14,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        return view('course', [
+            'title' => 'My Course',
+            'pagetitle' => 'My Course',
+            'courses' => Course::allData()
+        ]);
     }
 
     /**
@@ -46,7 +50,11 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        return view('showcourse', [
+            'title' => 'My Course',
+            'pagetitle'=>'Detail Course',
+            'course' => Course::dataWithCode($code)
+        ]);
     }
 
     /**

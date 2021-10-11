@@ -27,3 +27,10 @@ Route::get('/project/{code}', [ProjectController::class, 'show']);
 
 //* Contact
 Route::get('/contact', [Controller::class, 'contact']);
+
+//* Course
+Route::get('/course', [CourseController::class, 'index']);
+
+//* Detail Course
+Route::get('/course/{code}', [CourseController::class, 'show']);
+
