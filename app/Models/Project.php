@@ -44,7 +44,8 @@ class Project extends Model
 
     public static function allData()
     {
-        return self::$projects;
+        // return self::$projects;
+        return collect(self::$projects);
     }
 
     public static function dataWithCode($code)

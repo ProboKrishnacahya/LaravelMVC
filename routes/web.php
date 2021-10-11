@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -19,11 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/project', function () {
-    return view('project', ['title' => 'My Project', 'pagetitle' => 'My Project', 'projects' => Project::allData()]);
+    return view('project', [App\Http\Controllers\ProjectController::class, 'index']);
 });
 
 Route::get('/project/{code}', function ($code) {
-    return view('showproject', ['title' => 'Project', 'pagetitle' => 'Detail Project', 'project' => Project::dataWithCode($code)]);
+    return view('showproject', [App\Http\Controllers\ProjectController::class, 'show']);
 });
 
 Route::get('/contact', function () {
