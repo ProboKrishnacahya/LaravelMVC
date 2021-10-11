@@ -5,7 +5,7 @@
 @section('pagetitle', 'My Project')
 
 @section('main_content')
-    <table class="table table-striped mt-4">
+    <table class="table table-hover table-dark table-striped table-border border-light mt-4">
         <tr>
             <th>NO</th>
             <th>PROJECT</th>
