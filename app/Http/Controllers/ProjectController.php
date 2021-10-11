@@ -51,6 +51,7 @@ class ProjectController extends Controller
     {
         return view('showproject', [
             'title' => 'My Project',
+            'pagetitle'=>'Detail Project',
             'project' => Project::dataWithCode($code)
         ]);
     }

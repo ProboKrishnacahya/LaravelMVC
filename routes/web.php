@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -15,18 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', ['title' => 'Home', 'pagetitle' => 'Welcome Home']);
-});
+Route::get('/', [Controller::class, 'home']);
 
-Route::get('/project', function () {
-    return view('project', [App\Http\Controllers\ProjectController::class, 'index']);
-});
+Route::get('/project', [ProjectController::class, 'index']);
 
-Route::get('/project/{code}', function ($code) {
-    return view('showproject', [App\Http\Controllers\ProjectController::class, 'show']);
-});
+Route::get('/project/{code}', [ProjectController::class, 'show']);
 
-Route::get('/contact', function () {
-    return view('contact', ['title' => 'Contact', 'pagetitle' => 'My Contact']);
-});
+Route::get('/contact', [Controller::class, 'contact']);

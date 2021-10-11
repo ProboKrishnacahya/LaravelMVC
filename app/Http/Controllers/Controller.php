@@ -10,4 +10,12 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function home(){
+        return view('home', ['title' => 'Home', 'pagetitle' => 'Welcome Home']);
+    }
+
+    public function contact(){
+        return view('contact', ['title' => 'Contact', 'pagetitle' => 'My Contact']);
+    }
 }
