@@ -11,38 +11,51 @@ class Project extends Model
 
     private static $projects = [
         [
-            'title'=>'Calculator',
-            'code'=>'cal',
-            'course'=>'Algorithm & Programming'
+            'title' => 'Calculator',
+            'code' => 'cal',
+            'course' => 'Algorithm & Programming'
         ],
         [
-            'title'=>'Accounting',
-            'code'=>'acc',
-            'course'=>'Web Programming'
+            'title' => 'Accounting',
+            'code' => 'acc',
+            'course' => 'Web Programming'
         ],
         [
-            'title'=>'Student Report',
-            'code'=>'stu',
-            'course'=>'Web Programming'
+            'title' => 'Student Report',
+            'code' => 'stu',
+            'course' => 'Web Programming'
         ],
         [
-            'title'=>'POS Resto',
-            'code'=>'pos',
-            'course'=>'Algorithm & Programming'
+            'title' => 'POS Resto',
+            'code' => 'pos',
+            'course' => 'Algorithm & Programming'
         ],
         [
-            'title'=>'Online Resto',
-            'code'=>'onl',
-            'course'=>'Entrepreneurship'
+            'title' => 'Online Resto',
+            'code' => 'onl',
+            'course' => 'Entrepreneurship'
         ],
         [
-            'title'=>'Pet Shop',
-            'code'=>'pet',
-            'course'=>'Mobile App Development'
+            'title' => 'Pet Shop',
+            'code' => 'pet',
+            'course' => 'Mobile App Development'
         ]
     ];
 
-    public static function allData(){
+    public static function allData()
+    {
         return self::$projects;
+    }
+
+    public static function dataWithCode($code)
+    {
+        $allProjects = collect(static::allData());
+        return $allProjects->firstWhere('code', $code);
+        // $allProjects = self::$projects;
+        // foreach ($allProjects as $pro) {
+        //     if ($pro['code'] === $code) {
+        //         return $pro;
+        //     }
+        // }
     }
 }

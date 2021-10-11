@@ -7,6 +7,7 @@
 @section('main_content')
     <div class="mt-4 p-5 bg-primary text-white rounded">
         <h1>{{ $project['title'] }}</h1>
+        <hr class="mb-5">
         <p>Course: {{ $project['course'] }}</p>
         <p>Code: {{ $project['code'] }}</p>
     </div>

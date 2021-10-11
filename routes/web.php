@@ -22,6 +22,10 @@ Route::get('/project', function () {
     return view('project', ['title' => 'My Project', 'pagetitle' => 'My Project', 'projects' => Project::allData()]);
 });
 
+Route::get('/project/{code}', function ($code) {
+    return view('showproject', ['title' => 'Project', 'pagetitle' => 'Detail Project', 'project' => Project::dataWithCode($code)]);
+});
+
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact', 'pagetitle' => 'My Contact']);
 });
