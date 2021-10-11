@@ -11,6 +11,11 @@ a {
     text-decoration: none !important;
 }
 
+img {
+    max-width: 50%;
+    max-height: 2rem;
+}
+
 table {
     border: 2px solid var(--white);
 }

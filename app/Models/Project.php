@@ -33,12 +33,12 @@ class Project extends Model
         [
             'title' => 'Online Resto',
             'code' => 'onl',
-            'course' => 'Entrepreneurship'
+            'course' => 'Entrepreneurship Essentials'
         ],
         [
             'title' => 'Pet Shop',
             'code' => 'pet',
-            'course' => 'Mobile App Development'
+            'course' => 'Mobile Application Development'
         ]
     ];
 
