@@ -7,7 +7,7 @@
 @section('main_content')
     <table class="table table-hover table-dark table-striped table-border border-light mt-4">
         <tr>
-            <th>NO</th>
+            <th>NUM.</th>
             <th>CODE</th>
             <th>PROJECT</th>
             <th>SEMESTER</th>
