@@ -16,15 +16,9 @@
             @php($i = $loop->index)
             @php($i++)
             <tr>
-                <td>
-                    {{ $i }}
-                </td>
-                <td>
-                    <a href="course/{{ $matkul['code'] }}">{{ $matkul['code'] }}</a>
-                </td>
-                <td>
-                    {{ $matkul['name'] }}
-                </td>
+                <td>{{ $i }}</td>
+                <td><a href="course/{{ $matkul['code'] }}">{{ $matkul['code'] }}</a></td>
+                <td>{{ $matkul['name'] }}</td>
                 <td>{{ $matkul['lecturer'] }}</td>
             </tr>
         @endforeach

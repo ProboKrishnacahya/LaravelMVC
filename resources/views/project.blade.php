@@ -24,15 +24,9 @@
                 @php($semester = 'ODD')
             @endif
             <tr>
-                <td class="number">
-                    {{ $i }}
-                </td>
-                <td>
-                    {{ $pro['code'] }}
-                </td>
-                <td>
-                    <a href="project/{{ $pro['code'] }}">{{ $pro['title'] }}</a>
-                </td>
+                <td class="number">{{ $i }}</td>
+                <td>{{ $pro['code'] }}</td>
+                <td><a href="project/{{ $pro['code'] }}">{{ $pro['title'] }}</a></td>
                 <td>{{ $semester }}</td>
                 <td>{{ $pro['course'] }}</td>
                 <td>
