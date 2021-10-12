@@ -9,6 +9,7 @@
         <h1>{{ $course['code'] }}</h1>
         <hr class="mb-5">
         <p>Course Name: {{ $course['name'] }}</p>
+        <img src="" alt="">
         <p>Lecturer: {{ $course['lecturer'] }}</p>
         <p>Credits: {{ $course['credits'] }}</p>
         <p>Description: {{ $course['description'] }}</p>

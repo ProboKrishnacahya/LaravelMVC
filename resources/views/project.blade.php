@@ -24,7 +24,7 @@
                 @php($semester = 'ODD')
             @endif
             <tr>
-                <td>
+                <td class="number">
                     {{ $i }}
                 </td>
                 <td>

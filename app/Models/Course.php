@@ -42,7 +42,7 @@ class Course extends Model
         [
             'name' => 'Game Design',
             'code' => 'IMT2012',
-            'lecturer' => 'Mychael Maoeretz Engel, S.Kom., M.Cs. & Januar Tanzil , S.Kom.',
+            'lecturer' => 'Mychael Maoeretz Engel, S.Kom., M.Cs. & Januar Tanzil, S.Kom.',
             'credits' => '3 SKS',
             'description' => 'Mata kuliah ini akan mengenalkan dunia pengembangan permainan elektronik yang akan dimulai dengan pemahaman teori hingga praktek Game Design. Dimulai dengan pengenalan dan pengertian berbagai genre permainan yang ada, mekanika game dan pengenalan dasar-dasar pengembangan game elektronik menggunakan sebuah game engine.'
         ],

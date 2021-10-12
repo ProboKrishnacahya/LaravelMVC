@@ -21,12 +21,12 @@
         @include('layout.navigation')
     </nav>
 
-    <div class="container mt-5">
+    <div class="container my-5">
         <h1 class="fw-bold">@yield("pagetitle")</h1>
         @yield('main_content')
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-black text-white mt-5 py-3 fixed-bottom justify-content-center user-select-none">
+    <nav class="navbar navbar-expand-lg bg-black text-white fixed-bottom py-3 justify-content-center user-select-none">
         Copyright <a href="/">&nbsp;Project Catalog&nbsp;</a> &copy; 2021
     </nav>
 

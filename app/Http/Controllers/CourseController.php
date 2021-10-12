@@ -15,7 +15,7 @@ class CourseController extends Controller
     public function index()
     {
         return view('course', [
-            'title' => 'My Course',
+            'title' => 'Course',
             'pagetitle' => 'My Course',
             'courses' => Course::allData()
         ]);
@@ -51,7 +51,7 @@ class CourseController extends Controller
     public function show($code)
     {
         return view('showcourse', [
-            'title' => 'My Course',
+            'title' => 'Course',
             'pagetitle'=>'Detail Course',
             'course' => Course::dataWithCode($code)
         ]);

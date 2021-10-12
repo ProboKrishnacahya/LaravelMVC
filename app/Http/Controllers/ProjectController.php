@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('project', [
-            'title' => 'My Project',
+            'title' => 'Project',
             'pagetitle' => 'My Project',
             'projects' => Project::allData()
         ]);
@@ -51,7 +51,7 @@ class ProjectController extends Controller
     public function show($code)
     {
         return view('showproject', [
-            'title' => 'My Project',
+            'title' => 'Project',
             'pagetitle'=>'Detail Project',
             'project' => Project::dataWithCode($code)
         ]);
