@@ -5,7 +5,7 @@
 @section('pagetitle', 'Detail Course')
 
 @section('main_content')
-    <div class="mt-4 p-5 bg-primary text-white rounded">
+    <div class="card mt-4 p-5 bg-primary text-white">
         <h1>{{ $course['code'] }}</h1>
         <hr class="mb-5">
         <p>Course Name: {{ $course['name'] }}</p>

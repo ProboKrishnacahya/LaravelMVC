@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\ProjectController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,3 @@ Route::get('/course', [CourseController::class, 'index']);
 
 //* Detail Course
 Route::get('/course/{code}', [CourseController::class, 'show']);
-

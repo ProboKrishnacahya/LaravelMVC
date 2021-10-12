@@ -50,7 +50,7 @@ class Project extends Model
 
     public static function dataWithCode($code)
     {
-        $allProjects = collect(static::allData());
+        $allProjects = static::allData();
         return $allProjects->firstWhere('code', $code);
         // $allProjects = self::$projects;
         // foreach ($allProjects as $pro) {

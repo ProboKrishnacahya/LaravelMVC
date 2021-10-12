@@ -49,7 +49,7 @@ class Course extends Model
         [
             'name' => 'Becoming Indonesia',
             'code' => 'UNC2011',
-            'lecturer' => 'Ikhsan Rosyid Mujahidul Anwari',
+            'lecturer' => 'Ikhsan Rosyid Mujahidul Anwari, S.S., M.A.',
             'credits' => '3 SKS',
             'description' => 'Mata kuliah ini bertujuan untuk memperkenalkan spektrum keindonesiaan bagi mahasiswa, memberikan pemahaman mengenai fenomena kebudayaan dan konstruksi nasionalisme sebagai sebuah proses dari realitas sejarah sosial yang pernah terjadi di Indonesia.'
         ]
@@ -62,7 +62,7 @@ class Course extends Model
 
     public static function dataWithCode($code)
     {
-        $allCourses = collect(static::allData());
+        $allCourses = static::allData();
         return $allCourses->firstWhere('code', $code);
     }
 }

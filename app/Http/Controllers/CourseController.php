@@ -48,7 +48,7 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $code)
+    public function show($code)
     {
         return view('showcourse', [
             'title' => 'My Course',

@@ -16,7 +16,7 @@
 </head>
 
 <body class="bg-dark text-white">
-    <nav class="navbar navbar-expand-lg bg-black">
+    <nav class="navbar navbar-expand-lg bg-black user-select-none">
         <a class="navbar-brand ms-4" href="/"><img src="assets/img/logo.svg" class="pe-2" alt="Logo">SAA1&hyphen;0706012010039</a>
         @include('layout.navigation')
     </nav>
@@ -26,7 +26,7 @@
         @yield('main_content')
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-black text-white py-3 fixed-bottom justify-content-center">
+    <nav class="navbar navbar-expand-lg bg-black text-white mt-5 py-3 fixed-bottom justify-content-center user-select-none">
         Copyright <a href="/">&nbsp;Project Catalog&nbsp;</a> &copy; 2021
     </nav>
 
