@@ -9,6 +9,7 @@ class Course extends Model
 {
     use HasFactory;
 
+    //dummy data Courses
     private static $courses = [
         [
             'name' => 'Web Development',
@@ -55,11 +56,13 @@ class Course extends Model
         ]
     ];
 
+    //untuk mendapatkan semua dummy data dari Model Course
     public static function allData()
     {
         return collect(self::$courses);
     }
 
+    //untuk mendapatkan semua dummy data sesuai Kode Mata Kuliah
     public static function dataWithCode($code)
     {
         $allCourses = static::allData();

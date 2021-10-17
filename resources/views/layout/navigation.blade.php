@@ -1,4 +1,5 @@
 <div class="container-fluid justify-content-end">
+    {{-- Mengatur Active Page --}}
     <ul class="navbar-nav nav-pills">
         <li class="nav-link">
             <a class="nav-link {{ $title == 'Home' ? 'active' : '' }}" href="/">Home</a>

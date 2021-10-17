@@ -17,6 +17,7 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
+//Route::get('/URL page', [class, 'function']);
 //* Home
 Route::get('/', [Controller::class, 'home']);
 

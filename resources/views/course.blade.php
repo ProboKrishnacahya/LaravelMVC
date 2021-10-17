@@ -1,4 +1,4 @@
-@extends('layout.mainlayout')
+@extends('layout.courselayout')
 
 @section('title', 'Course')
 
@@ -13,10 +13,12 @@
             <th>LECTURER</th>
         </tr>
         @foreach ($courses as $matkul)
+            {{-- menampilkan nomor kolom secara berurutan melalui $loop->index --}}
             @php($i = $loop->index)
             @php($i++)
             <tr>
                 <td>{{ $i }}</td>
+                {{-- mengarahkan hyperlink ke detail Courses sesuai Kode Mata Kuliah yang diklik --}}
                 <td><a href="course/{{ $matkul['code'] }}">{{ $matkul['code'] }}</a></td>
                 <td>{{ $matkul['name'] }}</td>
                 <td>{{ $matkul['lecturer'] }}</td>

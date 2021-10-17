@@ -12,6 +12,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //menampilkan list Courses berupa table dari course.blade.php
     public function index()
     {
         return view('course', [
@@ -48,6 +49,7 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
+    //menampilkan detail Courses sesuai Kode Mata Kuliah yang diklik berupa card dari showcourse.blade.php
     public function show($code)
     {
         return view('showcourse', [
