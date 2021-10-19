@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CourseSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-        Course::create([
+        DB::table('Courses')->insert([
             'course_code' => 'IMT2008',
             'course_name' => 'Web Development',
             'lecturer' => 'Dipl.-Inf. Laura Mahendratta Tjahjono, M.I.T. & Evan Tanuwijaya, S.Kom., M.Kom.',

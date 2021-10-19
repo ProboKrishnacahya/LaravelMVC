@@ -25,10 +25,10 @@
             @endif
             <tr>
                 <td class="number">{{ $i }}</td>
-                <td>{{ $pro['code'] }}</td>
-                <td><a href="project/{{ $pro['code'] }}">{{ $pro['title'] }}</a></td>
+                <td>{{ $pro['id'] }}</td>
+                <td><a href="project/{{ $pro['id'] }}">{{ $pro['mata_kuliah'] }}</a></td>
                 <td>{{ $semester }}</td>
-                <td>{{ $pro['course'] }}</td>
+                <td>{{ $pro['description'] }}</td>
                 <td>
                     @if ($loop->first)
                         My Very FIRST Project

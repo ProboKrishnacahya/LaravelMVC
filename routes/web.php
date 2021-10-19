@@ -27,6 +27,12 @@ Route::get('/project', [ProjectController::class, 'index']);
 //* Detail Project
 Route::get('/project/{code}', [ProjectController::class, 'show']);
 
+//* Create Project
+Route::post('/project', [ProjectController::class, 'store']);
+
+//* Create Project
+Route::get('/create-project', [ProjectController::class, 'goToForm']);
+
 //* Contact
 Route::get('/contact', [Controller::class, 'contact']);
 
@@ -34,4 +40,4 @@ Route::get('/contact', [Controller::class, 'contact']);
 Route::get('/course', [CourseController::class, 'index']);
 
 //* Detail Course
-Route::get('/course/{code}', [CourseController::class, 'show']);
+Route::get('/course/{course_code}', [CourseController::class, 'show']);

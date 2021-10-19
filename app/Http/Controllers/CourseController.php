@@ -16,7 +16,9 @@ class CourseController extends Controller
     public function index()
     {
         $course = Course::all();
-        return view('course', compact('course'));
+        return view('course', compact('course'), [
+            'title' => 'Course'
+        ]);
         // [
         //     'title' => 'Course',
         //     'pagetitle' => 'My Course',
@@ -52,12 +54,23 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     //menampilkan detail Courses sesuai Kode Mata Kuliah yang diklik berupa card dari showcourse.blade.php
-    public function show($id)
+    public function show($course_code)
     {
-        $course = Course::where('semester', 'ODD')
-            ->orderBy('course')
-            ->get();
-        return view('showcourse', compact('course'));
+
+        // ->orderBy('course_code')
+        // if ($course_code == $course['course_code']) {
+        //     $getCourse['course_code'] = $course['course_code'];
+        //     $getCourse['course_name'] = $course['course_name'];
+        //     $getCourse['lecturer'] = $course['lecturer'];
+        //     $getCourse['number_sks'] = $course['number_sks'];
+        //     $getCourse['description'] = $course['description'];
+        // }
+
+        return view('showcourse', [
+            "title"=> "Course",
+            "course"=>Course::where('course_code',$course_code)
+            ->first()
+        ]);
         // [
         //     'title' => 'Course',
         //     'pagetitle'=>'Detail Course',

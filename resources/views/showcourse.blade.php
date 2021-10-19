@@ -6,12 +6,11 @@
 
 @section('main_content')
     <div class="card mt-4 p-5 bg-primary text-white">
-        <h1>{{ $course['code'] }}</h1>
+        <h1>{{ $course['course_code'] }}</h1>
         <hr class="mb-5">
-        <p>Course Name: {{ $course['name'] }}</p>
-        <img src="" alt="">
+        <p>Course Name: {{ $course['course_name'] }}</p>
         <p>Lecturer: {{ $course['lecturer'] }}</p>
-        <p>Credits: {{ $course['credits'] }}</p>
+        <p>Credits: {{ $course['number_sks'] }}</p>
         <p>Description: {{ $course['description'] }}</p>
     </div>
 @endsection

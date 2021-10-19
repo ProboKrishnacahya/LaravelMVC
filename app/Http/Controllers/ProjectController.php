@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -12,15 +13,18 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
-        $projects = Project::allData();
-        return view('project', compact('projects'));
-        //[
-        // 'title' => 'Project',
-        // 'pagetitle' => 'My Project',
-        // 'projects' => Project::allData()
-        //]);
+        $projects = Project::all();
+        return view(
+            'project',
+            compact('projects'),
+            [
+                'title' => 'Project',
+                // 'pagetitle' => 'My Project',
+                // 'projects' => Project::allData()
+            ]
+        );
     }
 
     /**
@@ -41,7 +45,27 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('projects')->insert([
+            'project' => $request->project,
+            'description' => $request->description,
+            'semester' => $request->semester,
+            'mata_kuliah' => $request->mata_kuliah,
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        self::index();
+        exit();
+    }
+
+    public function goToForm()
+    {
+        return view(
+            'createProject',
+            [
+                'title' => 'Project'
+            ]
+        );
     }
 
     /**
