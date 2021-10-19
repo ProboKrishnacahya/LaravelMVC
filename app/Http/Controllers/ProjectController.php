@@ -14,11 +14,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('project', [
-            'title' => 'Project',
-            'pagetitle' => 'My Project',
-            'projects' => Project::allData()
-        ]);
+        $projects = Project::allData();
+        return view('project', compact('projects'));
+        //[
+        // 'title' => 'Project',
+        // 'pagetitle' => 'My Project',
+        // 'projects' => Project::allData()
+        //]);
     }
 
     /**
@@ -48,13 +50,18 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($code)
+    public function show($id)
     {
-        return view('showproject', [
-            'title' => 'Project',
-            'pagetitle'=>'Detail Project',
-            'project' => Project::dataWithCode($code)
-        ]);
+        $projects = Project::where('semester', 'ODD')
+            ->orderBy('project')
+            ->get();
+        return view('showproject', compact('projects'));
+        //     [
+        //         'title' => 'Project',
+        //         'pagetitle' => 'Detail Project',
+        //         'project' => Project::dataWithCode($code)
+        //     ]
+        // );
     }
 
     /**

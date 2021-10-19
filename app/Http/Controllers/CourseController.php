@@ -15,11 +15,13 @@ class CourseController extends Controller
     //menampilkan list Courses berupa table dari course.blade.php
     public function index()
     {
-        return view('course', [
-            'title' => 'Course',
-            'pagetitle' => 'My Course',
-            'courses' => Course::allData()
-        ]);
+        $course = Course::all();
+        return view('course', compact('course'));
+        // [
+        //     'title' => 'Course',
+        //     'pagetitle' => 'My Course',
+        //     'courses' => Course::allData()
+        // ]);
     }
 
     /**
@@ -50,13 +52,17 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     //menampilkan detail Courses sesuai Kode Mata Kuliah yang diklik berupa card dari showcourse.blade.php
-    public function show($code)
+    public function show($id)
     {
-        return view('showcourse', [
-            'title' => 'Course',
-            'pagetitle'=>'Detail Course',
-            'course' => Course::dataWithCode($code)
-        ]);
+        $course = Course::where('semester', 'ODD')
+            ->orderBy('course')
+            ->get();
+        return view('showcourse', compact('course'));
+        // [
+        //     'title' => 'Course',
+        //     'pagetitle'=>'Detail Course',
+        //     'course' => Course::dataWithCode($code)
+        // ]);
     }
 
     /**
