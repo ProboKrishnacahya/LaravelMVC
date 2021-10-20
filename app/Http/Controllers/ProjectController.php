@@ -54,8 +54,15 @@ class ProjectController extends Controller
             'updated_at' => \Carbon\Carbon::now()
         ]);
 
-        self::index();
-        exit();
+        return view(
+            'project',
+            [
+                'title' => 'Project',
+                'projects' => Project::all()
+                // 'pagetitle' => 'My Project',
+                // 'projects' => Project::allData()
+            ]
+        );
     }
 
     public function goToForm()
@@ -76,16 +83,18 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $projects = Project::where('semester', 'ODD')
+        $project = Project::where('id', $id)
             ->orderBy('project')
             ->get();
-        return view('showproject', compact('projects'));
-        //     [
-        //         'title' => 'Project',
-        //         'pagetitle' => 'Detail Project',
-        //         'project' => Project::dataWithCode($code)
-        //     ]
-        // );
+        return view(
+            'showproject',
+            compact('project'),
+            [
+                'title' => 'Project',
+                //         'pagetitle' => 'Detail Project',
+                //         'project' => Project::dataWithCode($code)
+            ]
+        );
     }
 
     /**
@@ -94,9 +103,40 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        DB::table('projects')
+            ->where('id', $request->id)
+            ->update([
+                'project' => $request->project,
+                'description' => $request->description,
+                'semester' => $request->semester,
+                'mata_kuliah' => $request->mata_kuliah
+            ]);
+
+        return view(
+            'project',
+            [
+                'title' => 'Project',
+                'projects' => Project::all()
+                // 'pagetitle' => 'My Project',
+                // 'projects' => Project::allData()
+            ]
+        );
+    }
+
+    public function goToFormEdit($id)
+    {
+        $project = Project::where('id', $id)
+            ->orderBy('project')
+            ->get();
+        return view(
+            'editProject',
+            compact('project'),
+            [
+                'title' => 'Project'
+            ]
+        );
     }
 
     /**
@@ -119,6 +159,18 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('projects')
+            ->where('id', $id)
+            ->delete();
+
+        return view(
+            'project',
+            [
+                'title' => 'Project',
+                'projects' => Project::all()
+                // 'pagetitle' => 'My Project',
+                // 'projects' => Project::allData()
+            ]
+        );
     }
 }

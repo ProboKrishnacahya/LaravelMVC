@@ -33,6 +33,15 @@ Route::post('/project', [ProjectController::class, 'store']);
 //* Create Project
 Route::get('/create-project', [ProjectController::class, 'goToForm']);
 
+//* Edit Project
+Route::get('/edit-project/{id}', [ProjectController::class, 'goToFormEdit']);
+
+//* Edit Project
+Route::post('/project/edit', [ProjectController::class, 'edit']);
+
+//* Delete Project
+Route::get('/delete-project/{id}', [ProjectController::class, 'destroy']);
+
 //* Contact
 Route::get('/contact', [Controller::class, 'contact']);
 

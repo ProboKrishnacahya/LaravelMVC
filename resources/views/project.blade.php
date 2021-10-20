@@ -5,14 +5,16 @@
 @section('pagetitle', 'My Project')
 
 @section('main_content')
+    <a href="/create-project"><button type="button" class="btn btn-primary">Create Project</button></a>
+    <br>
     <table class="table table-hover table-dark table-striped table-border border-light mt-4">
         <tr>
             <th>NUM.</th>
             <th>CODE</th>
             <th>PROJECT</th>
             <th>SEMESTER</th>
-            <th>COURSE</th>
             <th>DESCRIPTION</th>
+            <th>ACTION</th>
         </tr>
         {{-- @php($projects = ['Calculator', 'Accounting', 'Student Report', 'POS Resto', 'Online Store', 'Pet Shop']) --}}
         @foreach ($projects as $pro)
@@ -26,17 +28,14 @@
             <tr>
                 <td class="number">{{ $i }}</td>
                 <td>{{ $pro['id'] }}</td>
-                <td><a href="project/{{ $pro['id'] }}">{{ $pro['mata_kuliah'] }}</a></td>
-                <td>{{ $semester }}</td>
+                <td><a href="project/{{ $pro['id'] }}">{{ $pro['project'] }}</a></td>
+                <td>{{ $pro['semester'] }}</td>
                 <td>{{ $pro['description'] }}</td>
                 <td>
-                    @if ($loop->first)
-                        My Very FIRST Project
-                    @elseif ($loop->last)
-                        My LAST Project
-                    @else
-                        Lorem ipsum dolor sit amet.
-                    @endif
+                    <a href="/edit-project/{{ $pro['id'] }}"><button type="button" class="btn btn-warning">Edit
+                            Project</button></a>
+                    <a href="/delete-project/{{ $pro['id'] }}"><button type="button" class="btn btn-danger">Delete
+                            Project</button></a>
                 </td>
             </tr>
         @endforeach
