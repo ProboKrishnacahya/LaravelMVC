@@ -94,11 +94,11 @@ class CourseController extends Controller
         //}
 
         $course = Course::where('course_code', $course_code)
-            ->orderBy('course')
+            ->orderBy('course_code')
             ->get();
         return view(
             'showcourse',
-            compact('courses'),
+            compact('course_code'),
             [
                 'title' => 'Course'
             ]
@@ -113,7 +113,7 @@ class CourseController extends Controller
      */
     public function edit(Request $request)
     {
-        DB::table('course')
+        DB::table('courses')
             ->where('course_code', $request->course_code)
             ->update([
                 'course_code' => $request->course_code,
@@ -135,11 +135,11 @@ class CourseController extends Controller
     public function goToFormEdit($course_code)
     {
         $course = Course::where('course_code', $course_code)
-            ->orderBy('course')
+            ->orderBy('course_code')
             ->get();
         return view(
             'editCourse',
-            compact('courses'),
+            compact('course'),
             [
                 'title' => 'Course'
             ]
