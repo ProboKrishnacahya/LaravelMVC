@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -15,8 +16,8 @@ class CourseController extends Controller
     //menampilkan list Courses berupa table dari course.blade.php
     public function index()
     {
-        $course = Course::all();
-        return view('course', compact('course'), [
+        $courses = Course::all();
+        return view('course', compact('courses'), [
             'title' => 'Course'
         ]);
         // [
@@ -44,7 +45,33 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('courses')->insert([
+            'course_code' => $request->course_code,
+            'course_name' => $request->course_name,
+            'lecturer' => $request->lecturer,
+            'number_sks' => $request->number_sks,
+            'description' => $request->description,
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now()
+        ]);
+
+        return view(
+            'course',
+            [
+                'title' => 'Course',
+                'courses' => Course::all()
+            ]
+        );
+    }
+
+    public function goToForm()
+    {
+        return view(
+            'createCourse',
+            [
+                'title' => 'Course'
+            ]
+        );
     }
 
     /**
@@ -64,18 +91,18 @@ class CourseController extends Controller
         //     $getCourse['lecturer'] = $course['lecturer'];
         //     $getCourse['number_sks'] = $course['number_sks'];
         //     $getCourse['description'] = $course['description'];
-        // }
+        //}
 
-        return view('showcourse', [
-            "title"=> "Course",
-            "course"=>Course::where('course_code',$course_code)
-            ->first()
-        ]);
-        // [
-        //     'title' => 'Course',
-        //     'pagetitle'=>'Detail Course',
-        //     'course' => Course::dataWithCode($code)
-        // ]);
+        $course = Course::where('course_code', $course_code)
+            ->orderBy('course')
+            ->get();
+        return view(
+            'showcourse',
+            compact('courses'),
+            [
+                'title' => 'Course'
+            ]
+        );
     }
 
     /**
@@ -84,9 +111,39 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Request $request)
     {
-        //
+        DB::table('course')
+            ->where('course_code', $request->course_code)
+            ->update([
+                'course_code' => $request->course_code,
+                'course_name' => $request->course_name,
+                'lecturer' => $request->lecturer,
+                'number_sks' => $request->number_sks,
+                'description' => $request->description
+            ]);
+
+        return view(
+            'course',
+            [
+                'title' => 'Course',
+                'courses' => Course::all()
+            ]
+        );
+    }
+
+    public function goToFormEdit($course_code)
+    {
+        $course = Course::where('course_code', $course_code)
+            ->orderBy('course')
+            ->get();
+        return view(
+            'editCourse',
+            compact('courses'),
+            [
+                'title' => 'Course'
+            ]
+        );
     }
 
     /**
@@ -107,8 +164,18 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($course_code)
     {
-        //
+        DB::table('courses')
+            ->where('course_code', $course_code)
+            ->delete();
+
+        return view(
+            'course',
+            [
+                'title' => 'Course',
+                'courses' => Course::all()
+            ]
+        );
     }
 }

@@ -30,10 +30,10 @@ Route::get('/project/{code}', [ProjectController::class, 'show']);
 //* Create Project
 Route::post('/project', [ProjectController::class, 'store']);
 
-//* Create Project
+//* Create Project (Form)
 Route::get('/create-project', [ProjectController::class, 'goToForm']);
 
-//* Edit Project
+//* Edit Project (Form)
 Route::get('/edit-project/{id}', [ProjectController::class, 'goToFormEdit']);
 
 //* Edit Project
@@ -50,3 +50,18 @@ Route::get('/course', [CourseController::class, 'index']);
 
 //* Detail Course
 Route::get('/course/{course_code}', [CourseController::class, 'show']);
+
+//* Create Course
+Route::post('/course', [CourseController::class, 'store']);
+
+//* Create Course (Form)
+Route::get('/create-course', [CourseController::class, 'goToForm']);
+
+//* Edit Course (Form)
+Route::get('/edit-course/{course_code}', [CourseController::class, 'goToFormEdit']);
+
+//* Edit Course
+Route::post('/course/edit', [CourseController::class, 'edit']);
+
+//* Delete Course
+Route::get('/delete-course/{course_code}', [CourseController::class, 'destroy']);
