@@ -83,7 +83,6 @@ class CourseController extends Controller
     //menampilkan detail Courses sesuai Kode Mata Kuliah yang diklik berupa card dari showcourse.blade.php
     public function show($course_code)
     {
-
         // ->orderBy('course_code')
         // if ($course_code == $course['course_code']) {
         //     $getCourse['course_code'] = $course['course_code'];
@@ -98,7 +97,7 @@ class CourseController extends Controller
             ->get();
         return view(
             'showcourse',
-            compact('course_code'),
+            compact('course'),
             [
                 'title' => 'Course'
             ]
