@@ -12,23 +12,23 @@
                     @csrf
                     <div class="form-group py-3">
                         <label for="course_code">Course Code:</label>
-                        <input type="text" class="form-control bg-black" id="course_code" name="course_code">
+                        <input type="text" class="form-control bg-black" id="course_code" name="course_code" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="course_name">Course Name:</label>
-                        <input type="text" class="form-control bg-black" id="course_name" name="course_name">
+                        <input type="text" class="form-control bg-black" id="course_name" name="course_name" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="lecturer">Lecturer:</label>
-                        <input type="text" class="form-control bg-black" id="lecturer" name="lecturer">
+                        <input type="text" class="form-control bg-black" id="lecturer" name="lecturer" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="number_sks">SKS:</label>
-                        <input type="number" class="form-control bg-black" id="number_sks" name="number_sks">
+                        <input type="number" class="form-control bg-black" id="number_sks" name="number_sks" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="description">Description:</label>
-                        <input type="text" class="form-control bg-black" id="description" name="description">
+                        <input type="text" class="form-control bg-black" id="description" name="description" required>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary mb-5">

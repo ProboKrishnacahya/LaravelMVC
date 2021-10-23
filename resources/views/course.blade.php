@@ -35,7 +35,7 @@
                     <td><a href="course/{{ $matkul['course_code'] }}">{{ $matkul['course_code'] }}</a></td>
                     <td>{{ $matkul['course_name'] }}</td>
                     <td>{{ $matkul['lecturer'] }}</td>
-                    <td>{{ $matkul['number_sks'] }}</td>
+                    <td class="number">{{ $matkul['number_sks'] }}</td>
                     <td>{{ $matkul['description'] }}</td>
                     <td>
                         <div class="d-flex gap-2 justify-content-center">
@@ -50,7 +50,7 @@
                                     </svg>&emsp;Edit
                                 </button>
                             </a>
-                            <a href="/delete-course/{{ $matkul['course_code'] }}">
+                            <a href="/delete-course/{{ $matkul['course_code'] }}" onclick = "return confirm('Are you sure you want to delete the data?\n\nThis action cannot be undone!');">
                                 <button type="button" class="btn btn-outline-danger">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-trash" viewBox="0 0 16 16">

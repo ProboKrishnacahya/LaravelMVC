@@ -12,19 +12,19 @@
                     @csrf
                     <div class="form-group py-3">
                         <label for="project">Project Name:</label>
-                        <input type="text" class="form-control bg-black" id="project" name="project">
+                        <input type="text" class="form-control bg-black" id="project" name="project" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="description">Description:</label>
-                        <input type="text" class="form-control bg-black" id="description" name="description">
+                        <input type="text" class="form-control bg-black" id="description" name="description" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="semester">Semester:</label>
-                        <input type="number" class="form-control bg-black" id="semester" name="semester">
+                        <input type="number" class="form-control bg-black" id="semester" name="semester" required>
                     </div>
                     <div class="form-group py-3">
                         <label for="mata_kuliah">Mata Kuliah:</label>
-                        <input type="text" class="form-control bg-black" id="mata_kuliah" name="mata_kuliah">
+                        <input type="text" class="form-control bg-black" id="mata_kuliah" name="mata_kuliah" required>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary mb-5">
