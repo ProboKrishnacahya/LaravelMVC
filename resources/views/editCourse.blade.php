@@ -12,23 +12,23 @@
                     @csrf
                     <div class="form-group py-3">
                         <label for="course_code">Course Code:</label>
-                        <input type="number" class="form-control" id="course_code" name="course_code" value="{{ $course[0]['course_code'] }}">
+                        <input type="input" class="form-control" id="course_code" name="course_code" value="{{ $course[0]['course_code'] }}">
                     </div>
                     <div class="form-group py-3">
                         <label for="course_name">Course Name:</label>
-                        <input type="text" class="form-control" id="course_name" name="course_name" value="{{ $course[0]['course_name'] }}">
+                        <input type="input" class="form-control" id="course_name" name="course_name" value="{{ $course[0]['course_name'] }}">
                     </div>
                     <div class="form-group py-3">
                         <label for="lecturer">Lecturer:</label>
-                        <input type="text" class="form-control" id="lecturer" name="lecturer" value="{{ $course[0]['lecturer'] }}">
+                        <input type="input" class="form-control" id="lecturer" name="lecturer" value="{{ $course[0]['lecturer'] }}">
                     </div>
                     <div class="form-group py-3">
                         <label for="number_sks">SKS:</label>
-                        <input type="number" class="form-control" id="number_sks" name="number_sks" value="{{ $course[0]['number_sks'] }}">
+                        <input type="input" class="form-control" id="number_sks" name="number_sks" value="{{ $course[0]['number_sks'] }}">
                     </div>
                     <div class="form-group py-3">
                         <label for="description">Description:</label>
-                        <input type="text" class="form-control" id="description" name="description" value="{{ $course[0]['description'] }}">
+                        <input type="input" class="form-control" id="description" name="description" value="{{ $course[0]['description'] }}">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary mb-5">
