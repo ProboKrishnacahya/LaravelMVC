@@ -35,7 +35,7 @@
     </div>
 
     {{-- Footer --}}
-    <nav class="navbar navbar-expand-lg bg-black text-white fixed-bottom py-3 justify-content-center user-select-none">
+    <nav class="navbar bg-black text-white fixed-bottom py-3 justify-content-center user-select-none">
         Copyright <a href="/">&nbsp;Project Catalog&nbsp;</a> &copy; 2021
     </nav>
 
