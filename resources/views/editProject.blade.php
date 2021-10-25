@@ -6,10 +6,15 @@
 
 @section('main_content')
     <div class="container">
+        <a href="{{ URL::previous() }}" class="btn btn-danger"><i class="fas fa-arrow-left"></i>Go Back</a>
         <div class="row">
             <div class="col">
                 <form action="/project/edit" method="post">
                     @csrf
+                    <div class="form-group py-3">
+                        <label for="code">Code:</label>
+                        <input type="text" class="form-control bg-black" id="code" name="code" required>
+                    </div>
                     <div class="form-group py-3">
                         <label for="project">Project Name:</label>
                         <input type="input" class="form-control" id="project" name="project"

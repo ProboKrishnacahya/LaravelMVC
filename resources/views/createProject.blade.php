@@ -8,8 +8,12 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="/project" method="post">
-                    @csrf
+                <form action="{{ route('project.store') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="form-group py-3">
+                        <label for="code">Code:</label>
+                        <input type="text" class="form-control bg-black" id="code" name="code" required>
+                    </div>
                     <div class="form-group py-3">
                         <label for="project">Project Name:</label>
                         <input type="text" class="form-control bg-black" id="project" name="project" required>
@@ -20,7 +24,11 @@
                     </div>
                     <div class="form-group py-3">
                         <label for="semester">Semester:</label>
-                        <input type="number" class="form-control bg-black" id="semester" name="semester" required>
+                        <input class="form-control bg-black" list="semester" name="semester" required>
+                        <datalist id="semester">
+                            <option value="Odd">
+                            <option value="Even">
+                        </datalist>
                     </div>
                     <div class="form-group py-3">
                         <label for="mata_kuliah">Mata Kuliah:</label>

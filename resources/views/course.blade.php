@@ -23,7 +23,7 @@
                 <th>LECTURER</th>
                 <th>SKS</th>
                 <th>DESCRIPTION</th>
-                <th>ACTION</th>
+                <th>ACTIONS</th>
             </tr>
             @foreach ($courses as $matkul)
                 {{-- menampilkan nomor kolom secara berurutan melalui $loop->index --}}

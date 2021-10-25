@@ -1,10 +1,11 @@
 <?php
 
 use App\Models\Project;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,47 +22,53 @@ use App\Http\Controllers\ProjectController;
 //* Home
 Route::get('/', [Controller::class, 'home']);
 
-//* Project
-Route::get('/project', [ProjectController::class, 'index']);
-
-//* Detail Project
-Route::get('/project/{code}', [ProjectController::class, 'show']);
-
-//* Create Project
-Route::post('/project', [ProjectController::class, 'store']);
-
-//* Create Project (Form)
-Route::get('/create-project', [ProjectController::class, 'goToForm']);
-
-//* Edit Project (Form)
-Route::get('/edit-project/{id}', [ProjectController::class, 'goToFormEdit']);
-
-//* Edit Project
-Route::post('/project/edit', [ProjectController::class, 'edit']);
-
-//* Delete Project
-Route::get('/delete-project/{id}', [ProjectController::class, 'destroy']);
-
 //* Contact
 Route::get('/contact', [Controller::class, 'contact']);
 
+//* Project
+Route::resource('projects', ProjectResourceController::class);
+
 //* Course
-Route::get('/course', [CourseController::class, 'index']);
+Route::resource('course', CourseResourceController::class);
 
-//* Detail Course
-Route::get('/course/{course_code}', [CourseController::class, 'show']);
+// //* Project
+// Route::get('/project', [ProjectController::class, 'index']);
 
-//* Create Course
-Route::post('/course', [CourseController::class, 'store']);
+// //* Detail Project
+// Route::get('/project/{code}', [ProjectController::class, 'show']);
 
-//* Create Course (Form)
-Route::get('/create-course', [CourseController::class, 'goToForm']);
+// //* Create Project
+// Route::post('/project', [ProjectController::class, 'store']);
 
-//* Edit Course (Form)
-Route::get('/edit-course/{course_code}', [CourseController::class, 'goToFormEdit']);
+// //* Create Project (Form)
+// Route::get('/create-project', [ProjectController::class, 'goToForm']);
 
-//* Edit Course
-Route::post('/course/edit', [CourseController::class, 'edit']);
+// //* Edit Project (Form)
+// Route::get('/edit-project/{id}', [ProjectController::class, 'goToFormEdit']);
 
-//* Delete Course
-Route::get('/delete-course/{course_code}', [CourseController::class, 'destroy']);
+// //* Edit Project
+// Route::post('/project/edit', [ProjectController::class, 'edit']);
+
+// //* Delete Project
+// Route::get('/delete-project/{id}', [ProjectController::class, 'destroy']);
+
+// //* Course
+// Route::get('/course', [CourseController::class, 'index']);
+
+// //* Detail Course
+// Route::get('/course/{course_code}', [CourseController::class, 'show']);
+
+// //* Create Course
+// Route::post('/course', [CourseController::class, 'store']);
+
+// //* Create Course (Form)
+// Route::get('/create-course', [CourseController::class, 'goToForm']);
+
+// //* Edit Course (Form)
+// Route::get('/edit-course/{course_code}', [CourseController::class, 'goToFormEdit']);
+
+// //* Edit Course
+// Route::post('/course/edit', [CourseController::class, 'edit']);
+
+// //* Delete Course
+// Route::get('/delete-course/{course_code}', [CourseController::class, 'destroy']);
