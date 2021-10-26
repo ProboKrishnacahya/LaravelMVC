@@ -11,7 +11,7 @@
                 <form action="{{ route('project.store') }}" method="post">
                     @csrf
 
-                    {{-- Menampilkan Alert jika Project Name < 5 / >50 karakter --}}
+                    {{-- Menampilkan Alert jika Project Name < 5 / > 50 karakter --}}
                     @if ($errors->any())
                         <div class="alert alert-info mt-3 justify-content-between" role="alert">
                             @foreach ($errors->all() as $error)
@@ -42,8 +42,8 @@
                         <label for="semester" class="mb-2">Semester:</label>
                         <input class="form-control bg-black text-white" list="semester" name="semester" required>
                         <datalist id="semester">
-                            <option value="Odd">
-                            <option value="Even">
+                            <option value="Odd"></option>
+                            <option value="Even"></option>
                         </datalist>
                     </div>
                     <div class="form-group py-2">

@@ -51,7 +51,7 @@ class ProjectResourceController extends Controller
             'semester' => $request->semester,
             'mata_kuliah' => $request->mata_kuliah
         ]);
-        return redirect(route('project.index')); // a href
+        return redirect(route('project.index')); //? seperti <a href=""></a>
     }
 
     //* Menampilkan detail data sesuai Project Name
@@ -64,7 +64,7 @@ class ProjectResourceController extends Controller
 
     public function edit($code)
     {
-        $projects = Project::findOrFail($code); //findOrFail mencari id di table Project yang sama dengan $code, maka semua data akan diambil & data disimpan di $projects
+        $projects = Project::findOrFail($code); //? findOrFail mencari id di table Project yang sama dengan $code, maka semua data akan diambil & data disimpan di $projects
         $title = "My Project";
         return view('editProject', compact('projects', 'title'));
     }

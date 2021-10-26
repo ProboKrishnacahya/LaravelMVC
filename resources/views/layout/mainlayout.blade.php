@@ -23,7 +23,7 @@
 <body class="bg-dark text-white">
     {{-- Header --}}
     <nav class="navbar navbar-expand-lg bg-black user-select-none">
-        <a class="navbar-brand ms-4" href="/"><img src="assets/img/logo.svg?v=2" class="pe-2" alt="Logo">SAA1&hyphen;0706012010039</a>
+        <a class="navbar-brand ms-4" href="/"><img src="{{ url('assets/img/logo.svg?v=2') }}"  class="pe-2" alt="Logo">SAA1&hyphen;0706012010039</a>
         @include('layout.navigation')
     </nav>
 

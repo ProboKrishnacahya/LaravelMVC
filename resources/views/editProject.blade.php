@@ -42,19 +42,27 @@
                     <input type="hidden" name="_method" value="PATCH">
                     <div class="form-group py-2">
                         <label for="project" class="mb-2">Project Name:</label>
-                        <input type="text" class="form-control bg-black text-white" name="project" value="{{ $projects->project }}" required> {{-- value nya $nama_table->nama_kolom sesuai yang di database --}}
+                        <input type="text" class="form-control bg-black text-white" name="project"
+                            value="{{ $projects->project }}" required> {{-- value nya $nama_table->nama_kolom sesuai yang di database --}}
                     </div>
                     <div class="form-group py-2">
                         <label for="description" class="mb-2">Description:</label>
-                        <input type="text" class="form-control bg-black text-white" id="description" name="description" value="{{ $projects->description }}" required>
+                        <input type="text" class="form-control bg-black text-white" id="description" name="description"
+                            value="{{ $projects->description }}" required>
                     </div>
                     <div class="form-group py-2">
                         <label for="semester" class="mb-2">Semester:</label>
-                        <input type="text" class="form-control bg-black text-white" name="semester" value="{{ $projects->semester }}" required>
+                        <select name="semester" class="custom-select">
+                            <option hidden value="{{ $projects->semester }}">
+                                {{ $projects->semester }}</option>
+                            <option value="Odd"></option>
+                            <option value="Even"></option>
+                        </select>
                     </div>
                     <div class="form-group py-2">
                         <label for="mata_kuliah" class="mb-2">Mata Kuliah:</label>
-                        <input type="text" class="form-control bg-black text-white" id="mata_kuliah" name="mata_kuliah" value="{{ $projects->mata_kuliah }}" required>
+                        <input type="text" class="form-control bg-black text-white" id="mata_kuliah" name="mata_kuliah"
+                            value="{{ $projects->mata_kuliah }}" required>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary mb-5">
@@ -64,7 +72,7 @@
                                 d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
                         </svg>&nbsp;Submit
                     </button>
-                    
+
                 </form>
             </div>
         </div>
