@@ -5,6 +5,7 @@
 @section('pagetitle', 'My Project')
 
 @section('main_content')
+
     <div class="d-md-flex justify-content-md-end">
         <a href="{{ route('project.create') }}">
             <button class="btn btn-success my-5" type="button">
@@ -18,6 +19,7 @@
         </a>
     </div>
     <br>
+
     <table class="table table-hover table-dark table-striped table-border border-light">
         <tr>
             <th>NUM.</th>
@@ -73,6 +75,7 @@
             </tr>
         @endforeach
     </table>
+    
 @endsection
 
 @section('footer')
