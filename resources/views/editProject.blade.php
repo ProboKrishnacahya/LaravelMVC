@@ -52,12 +52,12 @@
                     </div>
                     <div class="form-group py-2">
                         <label for="semester" class="mb-2">Semester:</label>
-                        <select name="semester" class="custom-select">
-                            <option hidden value="{{ $projects->semester }}">
-                                {{ $projects->semester }}</option>
+                        <input class="form-control bg-black text-white" list="semester" name="semester"
+                            placeholder="{{ $projects->semester }}" required>
+                        <datalist id="semester">
                             <option value="Odd"></option>
                             <option value="Even"></option>
-                        </select>
+                        </datalist>
                     </div>
                     <div class="form-group py-2">
                         <label for="mata_kuliah" class="mb-2">Mata Kuliah:</label>

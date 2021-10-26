@@ -29,7 +29,7 @@ Route::get('/contact', [Controller::class, 'contact']);
 Route::resource('projects', ProjectResourceController::class);
 
 //* Course
-Route::resource('course', CourseResourceController::class);
+Route::resource('courses', CourseResourceController::class);
 
 // //* Project
 // Route::get('/project', [ProjectController::class, 'index']);

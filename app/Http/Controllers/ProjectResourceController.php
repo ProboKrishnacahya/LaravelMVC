@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class ProjectResourceController extends Controller
 {
-    //* Menampilkan data pada table di halaman /project
+    //* Read all data pada table di halaman /project
     public function index()
     {
         $active_welcome = "";
@@ -29,11 +29,13 @@ class ProjectResourceController extends Controller
         );
     }
 
+    //* Memanggil View createProject.blade.php
     public function create()
     {
         return view('createProject', ['title' => 'Create Project']);
     }
 
+    //* Create new data hasil submit dari createProject.blade.php
     public function store(Request $request)
     {
         //? Validator untuk input jumlah karakter pada Project Name
@@ -69,6 +71,7 @@ class ProjectResourceController extends Controller
         return view('editProject', compact('projects', 'title'));
     }
 
+    //* Update existing data pada editProject.blade.php
     public function update(Request $request, $id)
     {
         $code = Str::upper(Str::substr($request->project, 0, 3));
@@ -83,6 +86,7 @@ class ProjectResourceController extends Controller
         return redirect(route('project.index'));
     }
 
+    //* Delete selected data pada database
     public function destroy($id)
     {
         $projects = Project::findOrFail($id);
