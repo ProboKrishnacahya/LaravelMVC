@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
 
     protected $table = 'projects';
-    protected $fillable = ['code', 'project', 'semester', 'mata_kuliah', 'description'];
+    protected $fillable = ['code', 'project', 'semester', 'mata_kuliah', 'description']; //Nama kolom pada database tersebut boleh diisi (diberi akses)
 
     // private static $projects = [
     //     [

@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group py-2">
                         <label for="mata_kuliah" class="mb-2">Mata Kuliah:</label>
-                        <input type="text" class="form-control" id="mata_kuliah" name="mata_kuliah" value="{{ $projects->mata_kuliah }}" required>
+                        <input type="text" class="form-control" id="mata_kuliah" name="mata_kuliah" value="{{ $projects->mata_kuliah }}" required> //value $table->kolom
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary mb-5">

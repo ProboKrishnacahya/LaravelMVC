@@ -9,12 +9,14 @@ use Illuminate\Support\Str;
 
 class ProjectResourceController extends Controller
 {
+    //* Menampilkan data pada table di halaman /project
     public function index()
     {
         $active_welcome = "";
         $active_projects = "active";
         $active_courses = "";
 
+        //Ambil semua data yang ada di table Projects pada database
         $projects = Project::all();
 
         return view(
@@ -34,6 +36,12 @@ class ProjectResourceController extends Controller
 
     public function store(Request $request)
     {
+        //? Validator untuk input jumlah karakter pada Project Name
+        $this->validate($request, [
+            'project' => 'required|min:5|max:50',
+        ]);
+
+        //? Mengambil 3 karakter yang paling depan dari Project Name + diubah dalam bentuk uppercase untuk menjadi Code nya
         $code = Str::upper(Str::substr($request->project, 0, 3));
 
         Project::create([
@@ -43,21 +51,20 @@ class ProjectResourceController extends Controller
             'semester' => $request->semester,
             'mata_kuliah' => $request->mata_kuliah
         ]);
-        return redirect(route('project.index'));
+        return redirect(route('project.index')); // a href
     }
 
-    public function show($code)
+    //* Menampilkan detail data sesuai Project Name
+    public function show($id)
     {
-        $projects = Project::where('code', $code)
-            ->orderBy('project')
-            ->first();
+        $projects = Project::where('code', $id)->first();
         $title = "My Project";
         return view('showproject', compact('projects', 'title'));
     }
 
     public function edit($code)
     {
-        $projects = Project::findOrFail($code);
+        $projects = Project::findOrFail($code); //findOrFail mencari id di table Project yang sama dengan $code, maka semua data akan diambil & data disimpan di $projects
         $title = "My Project";
         return view('editProject', compact('projects', 'title'));
     }
