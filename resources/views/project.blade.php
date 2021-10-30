@@ -7,7 +7,7 @@
 @section('main_content')
 
     <div class="d-md-flex justify-content-md-end">
-        <a href="{{ route('project.create') }}">
+        <a href="{{ route('projects.create') }}">
             <button class="btn btn-success my-5" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
                     viewBox="0 0 16 16">
@@ -41,13 +41,13 @@
             <tr>
                 <td class="number">{{ $i }}</td>
                 <td>{{ $pro['code'] }}</td>
-                <td><a href="{{ route('project.show', $pro->code) }}">{{ $pro['project'] }}</a></td>
+                <td><a href="{{ route('projects.show', $pro->code) }}">{{ $pro['project'] }}</a></td>
                 <td>{{ $pro['description'] }}</td>
                 <td>{{ $pro['semester'] }}</td>
                 <td>{{ $pro['mata_kuliah'] }}</td>
                 <td>
                     <div class="d-flex gap-2 justify-content-center">
-                        <a class="btn btn-warning" href="{{ route('project.edit', $pro->id) }}">
+                        <a class="btn btn-warning" href="{{ route('projects.edit', $pro->id) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path
@@ -56,7 +56,7 @@
                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                             </svg>
                         </a>
-                        <form action="{{ route('project.destroy', $pro->id) }}" method="POST">
+                        <form action="{{ route('projects.destroy', $pro->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger"
@@ -75,7 +75,7 @@
             </tr>
         @endforeach
     </table>
-    
+
 @endsection
 
 @section('footer')

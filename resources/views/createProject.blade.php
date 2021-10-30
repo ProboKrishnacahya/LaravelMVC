@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="{{ route('project.store') }}" method="post">
+                <form action="{{ route('projects.store') }}" method="post">
                     @csrf
 
                     {{-- Menampilkan Alert jika Project Name < 5 / > 50 karakter --}}

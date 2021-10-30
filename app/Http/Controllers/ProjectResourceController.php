@@ -12,10 +12,6 @@ class ProjectResourceController extends Controller
     //* Read all data pada table di halaman /project
     public function index()
     {
-        $active_welcome = "";
-        $active_projects = "active";
-        $active_courses = "";
-
         //Ambil semua data yang ada di table Projects pada database
         $projects = Project::all();
 
@@ -25,7 +21,7 @@ class ProjectResourceController extends Controller
                 "title" => "Project",
                 "pagetitle" => "My Project"
             ],
-            compact('active_welcome', 'active_projects', 'active_courses', 'projects')
+            compact('projects')
         );
     }
 
@@ -53,7 +49,7 @@ class ProjectResourceController extends Controller
             'semester' => $request->semester,
             'mata_kuliah' => $request->mata_kuliah
         ]);
-        return redirect(route('project.index')); //? seperti <a href=""></a>
+        return redirect(route('projects.index')); //? seperti <a href=""></a>
     }
 
     //* Menampilkan detail data sesuai Project Name
@@ -83,7 +79,7 @@ class ProjectResourceController extends Controller
             'semester' => $request->semester,
             'mata_kuliah' => $request->mata_kuliah
         ]);
-        return redirect(route('project.index'));
+        return redirect(route('projects.index'));
     }
 
     //* Delete selected data pada database
@@ -91,7 +87,7 @@ class ProjectResourceController extends Controller
     {
         $projects = Project::findOrFail($id);
         $projects->delete();
-        return redirect(route('project.index'));
+        return redirect(route('projects.index'));
     }
 }
     // public function index()

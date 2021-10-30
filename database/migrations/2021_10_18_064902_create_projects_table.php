@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('code')->nullable();
             $table->string('project');

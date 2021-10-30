@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col">
-                <form action="{{ route('project.update', $projects->id) }}" method="post">
+                <form action="{{ route('projects.update', $projects->id) }}" method="post">
                     @csrf
 
                     @if ($errors->any())

@@ -1,22 +1,13 @@
 <?php
 
 use App\Models\Project;
+use App\Models\Course;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CourseResourceController;
 use App\Http\Controllers\ProjectResourceController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 //Route::get('/URL page', [class, 'function']);
 //* Home
@@ -26,10 +17,10 @@ Route::get('/', [Controller::class, 'home']);
 Route::get('/contact', [Controller::class, 'contact']);
 
 //* Project
-Route::resource('projects', ProjectResourceController::class);
+Route::resource('project', ProjectResourceController::class);
 
 //* Course
-Route::resource('courses', CourseResourceController::class);
+Route::resource('course', CourseResourceController::class);
 
 // //* Project
 // Route::get('/project', [ProjectController::class, 'index']);
