@@ -16,7 +16,7 @@ class AddColumnsCourses extends Migration
         Schema::table('courses', function (Blueprint $table) {
             $table->string('course_name');
             $table->string('lecturer');
-            $table->integer('number_sks');
+            $table->smallInteger('number_sks');
             $table->text('description');
         });
     }

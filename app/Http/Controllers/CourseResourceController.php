@@ -2,83 +2,83 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+
 
 class CourseResourceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //* Read all data pada table di halaman /course
     public function index()
     {
-        //
+        //Ambil semua data yang ada di table Courses pada database
+        $courses = Course::all();
+
+        return view(
+            'course',
+            [
+                "title" => "Course",
+                "pagetitle" => "My Course"
+            ],
+            compact('courses')
+        );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //* Memanggil View createCourse.blade.php
     public function create()
     {
-        //
+        return view('createCourse', ['title' => 'Create Course']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //* Create new data hasil submit dari createCourse.blade.php
     public function store(Request $request)
     {
-        //
+        Course::create([
+            'course_code' => $request->course_code,
+            'course_name' => $request->course_name,
+            'lecturer' => $request->lecturer,
+            'number_sks' => $request->number_sks,
+            'description' => $request->description
+        ]);
+        return redirect(route('courses.index')); //? seperti <a href=""></a>
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    //* Menampilkan detail data sesuai Course Name
+    public function show($code)
     {
-        //
+        $courses = Course::where('course_code', $code)->first();
+        $title = "My Course";
+        return view('showcourse', compact('courses', 'title'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit($code)
     {
-        //
+        $courses = Course::where('course_code', $code)->first();
+        $title = "My Course";
+        return view('editCourse', compact('courses', 'title'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    //* Update existing data pada editCourse.blade.php
+    public function update(Request $request, $code)
     {
-        //
+        $courses = Course::where('course_code', $code);
+        $courses->update([
+            'course_code' => $request->course_code,
+            'course_name' => $request->course_name,
+            'lecturer' => $request->lecturer,
+            'number_sks' => $request->number_sks,
+            'description' => $request->description,
+        ]);
+        return redirect(route('courses.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    //* Delete selected data pada database
+    public function destroy($code)
     {
-        //
+        $courses = Course::where('course_code', $code);
+        $courses->delete();
+        return redirect(route('courses.index'));
     }
 }

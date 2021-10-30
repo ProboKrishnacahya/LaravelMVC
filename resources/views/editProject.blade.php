@@ -1,4 +1,4 @@
-@extends('layout.courselayout')
+@extends('layout.mainlayout')
 
 @section('title', 'Project')
 
@@ -47,8 +47,8 @@
                     </div>
                     <div class="form-group py-2">
                         <label for="description" class="mb-2">Description:</label>
-                        <input type="text" class="form-control bg-black text-white" id="description" name="description"
-                            value="{{ $projects->description }}" required>
+                        <textarea class="form-control bg-black text-white" id="description" name="description" value="{{ $projects->description }}"  required>
+                        </textarea>
                     </div>
                     <div class="form-group py-2">
                         <label for="semester" class="mb-2">Semester:</label>
