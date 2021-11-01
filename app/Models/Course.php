@@ -9,8 +9,16 @@ class Course extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'course_code';
+    protected $keyType = 'string';
+
     protected $table = 'courses';
     protected $fillable = ['course_code', 'course_name', 'lecturer', 'number_sks', 'description'];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'mata_kuliah', 'course_code');
+    }
 
     //dummy data Courses
     // private static $courses = [
